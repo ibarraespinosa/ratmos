@@ -52,10 +52,12 @@ raster_nc <- function(nc,
   a <- function(x) ifelse(x < 0, - 1, 1)
   lon <- seq(xmin, xmax, by = length( (xmin - a(xmin)):xmax)/dx)
   lat <- seq(ymin, ymax, by = length((ymin - a(ymin)):ymax)/dy)
-  if(dim(u) == 4){
+  if(length(dim(u)) == 4){
     ru1 <- ratmos::array4d(u = u, z = z, lat = lat, lon = lon)
-  } else if(dim(u) == 3){
+  } else if(length(dim(u)) == 3){
     ru1 <- ratmos::array3d(u = u, z = z, lat = lat, lon = lon)
+  } else if(!length(dim(u)) %in% c(3, 4)) {
+    stop("Currntly supporting arrays of 3 and 4 dimensions")
   }
   if(verbose){
     cat(paste0("\nThis ", class(ru1)," is ",
