@@ -3,6 +3,7 @@
 export(array3d)
 export(array4d)
 export(raster_nc)
+export(seqraster)
 importFrom(ncdf4,nc_open)
 importFrom(ncdf4,ncvar_get)
 importFrom(raster,flip)
