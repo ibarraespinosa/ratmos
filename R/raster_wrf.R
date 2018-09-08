@@ -53,7 +53,7 @@ raster_wrf <- function(nc,
     lon <- ncdf4::ncvar_get(f, "XLONG" )
     times <- ncdf4::ncvar_get(f, "Times")
     if(verbose){
-      cat(paste0("From: ", times[1], " to, ", times[lenth(times)], "\n"))
+      cat(paste0("From: ", times[1], " to, ", times[length(times)], "\n"))
     }
 
     times <- gsub(pattern = " ", replacement = "_", x = times)
