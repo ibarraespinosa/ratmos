@@ -4,23 +4,10 @@
 \alias{raster_wrf}
 \title{Creates raster from nc path}
 \usage{
-raster_wrf(nc, xmin = -150, xmax = 10, ymin = -60, ymax = 40,
-  dx = 215, dy = 135, var, z = 6, array = FALSE, verbose = TRUE)
+raster_wrf(nc, var, z, array = FALSE, verbose = TRUE)
 }
 \arguments{
 \item{nc}{Character; Path to NetCDF.}
-
-\item{xmin}{Numeric; xmin coordinate.}
-
-\item{xmax}{Numeric; xmax coordinate.}
-
-\item{ymin}{Numeric; ymin coordinate.}
-
-\item{ymax}{Numeric; ymax coordinate.}
-
-\item{dx}{Numeric; grid spacing x.}
-
-\item{dy}{Numeric; grid spacing y.}
 
 \item{var}{Character; name of variable. If you dont know, you can choose.}
 
