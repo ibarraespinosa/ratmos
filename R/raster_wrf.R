@@ -70,8 +70,8 @@ raster_wrf <- function(nc, var, z,
     stop("Currntly supporting arrays of 3 and 4 dimensions")
   }
   if(verbose){
-    cat(paste0("\nThis ", class(ru1)," is \n",
-               format(object.size(ru1), units = "Mb")))
+    cat(paste0("\nThis ", class(ru1)," is ",
+               format(object.size(ru1), units = "Mb"), "\n"))
   }
   return(ru1)
 }
