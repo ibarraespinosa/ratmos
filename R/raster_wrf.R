@@ -58,7 +58,7 @@ raster_wrf <- function(nc, var, z,
       cat(paste0("Lon from ", lon[1], " to ", lon[length(lon)], "\n"))
     }
 
-    times <- strftime(as.POSIXct(times), "%Y%m%d_%H%M")
+    times <- gsub(pattern = " ", replacement = "_", x = times)
     times <- paste0("T", times)
 
   if(length(dim(u)) == 4){
