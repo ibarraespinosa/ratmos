@@ -62,10 +62,18 @@ raster_wrf <- function(nc, var, z,
     times <- paste0("H", times)
 
   if(length(dim(u)) == 4){
-    ru1 <- ratmos::array4d(u = u, z = z, lat = lat, lon = lon)
+    ru1 <- raster::flip(ratmos::array4d(u = u,
+                                        z = z,
+                                        lat = lat,
+                                        lon = lon),
+                        direction = "y")
     names(ru1) <- times
   } else if(length(dim(u)) == 3){
-    ru1 <- ratmos::array3d(u = u, z = z, lat = lat, lon = lon)
+    ru1 <- raster::flip(ratmos::array3d(u = u,
+                                        z = z,
+                                        lat = lat,
+                                        lon = lon),
+                    direction = "y")
   } else if(!length(dim(u)) %in% c(3, 4)) {
     stop("Currntly supporting arrays of 3 and 4 dimensions")
   }
