@@ -41,10 +41,10 @@ raster_wrf <- function(nc, var, z,
   }
 
   if(missing(z)){
-    choice <- utils::menu(1:dim(u)[3], title="Choose Level Z")
+    choice <- utils::menu(1:dim(u)[3], title="Choose Level Z\n")
     z <- (1:dim(u)[3])[choice]
     if(verbose){
-      cat(paste0("\nThe level is'", z, "\n"))
+      cat(paste0("\nThe level is '", z, "\n"))
     }
   } else {
     z = z
@@ -53,11 +53,12 @@ raster_wrf <- function(nc, var, z,
     lon <- ncdf4::ncvar_get(f, "XLONG" )
     times <- ncdf4::ncvar_get(f, "Times")
     if(verbose){
-      cat(paste0("From: ", times[1], " to, ", times[length(times)], "\n"))
+      cat(paste0("Times from ", times[1], " to ", times[length(times)], "\n"))
+      cat(paste0("Lat from ", lat[1], " to ", lat[length(lat)], "\n"))
+      cat(paste0("Lon from ", lon[1], " to ", lon[length(lon)], "\n"))
     }
 
     times <- gsub(pattern = " ", replacement = "_", x = times)
-    times <- gsub(pattern = ".", replacement = "_", x = times)
     times <- paste0("H", times)
 
   if(length(dim(u)) == 4){
