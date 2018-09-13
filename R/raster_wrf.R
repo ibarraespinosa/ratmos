@@ -15,7 +15,7 @@
 #' #dont run
 #' }
 raster_wrf <- function(nc, var, z,
-                      array = FALSE, verbose = TRUE){
+                       array = FALSE, verbose = TRUE){
   f <- ncdf4::nc_open(filename = nc)
   if(verbose){
     cat(paste("The file has",f$nvars,"variables:\n"))
@@ -49,26 +49,35 @@ raster_wrf <- function(nc, var, z,
   } else {
     z = z
   }
-    lat <- ncdf4::ncvar_get(f, "XLAT" )
-    lon <- ncdf4::ncvar_get(f, "XLONG" )
-    times <- ncdf4::ncvar_get(f, "Times")
-    if(verbose){
-      cat(paste0("Times from ", times[1], " to ", times[length(times)], "\n"))
-      cat(paste0("Lat from ", lat[1], " to ", lat[length(lat)], "\n"))
-      cat(paste0("Lon from ", lon[1], " to ", lon[length(lon)], "\n"))
-    }
+  lat <- ncdf4::ncvar_get(f, "XLAT" )
+  lon <- ncdf4::ncvar_get(f, "XLONG" )
+  times <- ncdf4::ncvar_get(f, "Times")
+  if(verbose){
+    cat(paste0("Times from ", times[1], " to ", times[length(times)], "\n"))
+    cat(paste0("Lat from ", lat[1], " to ", lat[length(lat)], "\n"))
+    cat(paste0("Lon from ", lon[1], " to ", lon[length(lon)], "\n"))
+  }
 
-    times <- gsub(pattern = " ", replacement = "_", x = times)
-    times <- paste0("T", times)
+  times <- gsub(pattern = " ", replacement = "_", x = times)
+  times <- paste0("T", times)
 
   if(length(dim(u)) == 4){
-    ru1 <- ratmos::array4d(u = u, z = z, lat = lat, lon = lon)
+    ru1 <- raster::flip(ratmos::array4d(u = u,
+                                        z = z,
+                                        lat = lat,
+                                        lon = lon),
+                        direction = "y")
     names(ru1) <- times
   } else if(length(dim(u)) == 3){
-    ru1 <- ratmos::array3d(u = u, z = z, lat = lat, lon = lon)
+    ru1 <- raster::flip(ratmos::array3d(u = u,
+                                        z = z,
+                                        lat = lat,
+                                        lon = lon),
+                        direction = "y")
   } else if(!length(dim(u)) %in% c(3, 4)) {
     stop("Currntly supporting arrays of 3 and 4 dimensions")
   }
+  rm(u)
   if(verbose){
     cat(paste0("\nThis ", class(ru1)," is ",
                format(object.size(ru1), units = "Mb"), "\n"))
