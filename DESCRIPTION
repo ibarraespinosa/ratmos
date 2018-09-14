@@ -12,7 +12,8 @@ Depends:
   raster
 Imports:
 	raster,
-	ncdf4
+	ncdf4,
+	tidyr
 Suggests: 
 	cptcity
 License: MIT + file LICENSE
