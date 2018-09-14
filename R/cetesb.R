@@ -1,6 +1,6 @@
 #' Location some air quality stations CETESB
 #'
-#' @format A SpatialPointsDataFrame with 23 stations
+#' @format A SpatialPointsDataFrame with 16 stations in São Paulo Area
 #' \describe{
 #'   \item{estacion}{Station}
 #' }
