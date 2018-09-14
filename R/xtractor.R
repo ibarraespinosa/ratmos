@@ -4,6 +4,7 @@
 #' @param x raster (or brick)
 #' @param points data.frame, matrix, SpatialPointsDataFrame.
 #' @param stations Character; names of stations for each point.
+#' @param xtimes Logical; names of x are times in format
 #' @return Return long data.frame (for ggplot2)
 #' @importFrom sp coordinates proj4string
 #' @importFrom raster extract
@@ -12,7 +13,7 @@
 #' @export
 #' @examples \dontrun{
 #' }
-xtractor <- function(x, points, stations) {
+xtractor <- function(x, points, stations, start = "2016-04-15 00:00") {
   # stations
   if(class(points)[1] == "matrix" | class(points)[1] == "data.frame"){
     points <- as.data.frame(points)
@@ -30,5 +31,9 @@ xtractor <- function(x, points, stations) {
   }
   dft <- do.call("rbind", dft)
   dft <- dft[dft$key != "ID", ]
+  if(!missing(start)){
+  start <- as.POSIXct(start, tz = "GMT")
+  dft$times <- seq.POSIXt(start, length.out = length(names(x)), by = 3600)
+  }
   return(dft)
 }

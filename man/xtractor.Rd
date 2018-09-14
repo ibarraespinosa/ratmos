@@ -4,7 +4,7 @@
 \alias{xtractor}
 \title{extractor from atmospheric models}
 \usage{
-xtractor(x, points, stations)
+xtractor(x, points, stations, start = "2016-04-15 00:00")
 }
 \arguments{
 \item{x}{raster (or brick)}
@@ -12,6 +12,8 @@ xtractor(x, points, stations)
 \item{points}{data.frame, matrix, SpatialPointsDataFrame.}
 
 \item{stations}{Character; names of stations for each point.}
+
+\item{xtimes}{Logical; names of x are times in format}
 }
 \value{
 Return long data.frame (for ggplot2)
