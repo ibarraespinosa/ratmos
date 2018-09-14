@@ -2,6 +2,7 @@
 
 export(array3d)
 export(array4d)
+export(gfs)
 export(raster_nc)
 export(raster_wrf)
 export(seqraster)
