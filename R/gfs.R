@@ -10,11 +10,12 @@
 #' @param time Numeric or POSIXct; numer for Year, Month and Day.
 #' For instance, 2004120100 or "2004-12-01 00:00". The
 #' only hours available are 00:00, 06:00, 12:00 and 18:00,
-#' @param var Character; name of variable. If you dont know,
-#' you can choose.
+#' @param dest directory for storing your GFS grib data.
 #' @param id1 Integer; 0, 3 or 6
 #' @param id2 Integer; 3 or 4
+#'
 #' @param verbose Logical; To show operations.
+#' @importFrom utils download.file
 #' @return raster
 #' @export
 #' @note
@@ -22,9 +23,11 @@
 #' @examples \dontrun{
 #' #dont run
 #' }
-gfs <- function(time, var, id1 = 3, id2 = 0,
-                       dest = tempdir(),
-                       verbose = TRUE){
+gfs <- function(time,
+                dest = tempdir(),
+                id1 = 3,
+                id2 = 0,
+                verbose = TRUE){
   if(class(time)== "numeric"){
     if(nchar(time) != 10 ) stop("Please, use a format like '2004120100'")
     dir1 <- substr(time, 0, 6)
@@ -51,6 +54,6 @@ gfs <- function(time, var, id1 = 3, id2 = 0,
   if(verbose) cat(paste0("FILE: ", f, "\n"))
   INV = paste0(a, dir1, "/",dir2, "/", inv)
   if(verbose) cat(paste0("INV: ", inv, "\n"))
-  download.file(url = URL, destfile = paste0(dest, "0.grb2"))
-  download.file(url = INBL, destfile = paste0(dest, "0.inv"))
+  utils::download.file(url = URL, destfile = paste0(dest, "0.grb2"))
+  utils::download.file(url = INV, destfile = paste0(dest, "0.inv"))
 }

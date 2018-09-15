@@ -4,15 +4,14 @@
 \alias{gfs}
 \title{Get GFS files}
 \usage{
-gfs(time, var, id1 = 3, id2 = 0, dest = tempdir(), verbose = TRUE)
+gfs(time, dest = tempdir(), id1 = 3, id2 = 0, verbose = TRUE)
 }
 \arguments{
 \item{time}{Numeric or POSIXct; numer for Year, Month and Day.
 For instance, 2004120100 or "2004-12-01 00:00". The
 only hours available are 00:00, 06:00, 12:00 and 18:00,}
 
-\item{var}{Character; name of variable. If you dont know,
-you can choose.}
+\item{dest}{directory for storing your GFS grib data.}
 
 \item{id1}{Integer; 0, 3 or 6}
 

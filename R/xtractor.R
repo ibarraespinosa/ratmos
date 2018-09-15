@@ -4,7 +4,7 @@
 #' @param x raster (or brick)
 #' @param points data.frame, matrix, SpatialPointsDataFrame.
 #' @param stations Character; names of stations for each point.
-#' @param xtimes Logical; names of x are times in format
+#' @param start Character or POSIXct; first GMT hour of data.
 #' @return Return long data.frame (for ggplot2)
 #' @importFrom sp coordinates proj4string
 #' @importFrom raster extract
@@ -12,6 +12,7 @@
 #' @note Based on NCL scrip xtractor from DCA/IAG/USP
 #' @export
 #' @examples \dontrun{
+#' #do not run
 #' }
 xtractor <- function(x, points, stations, start = "2016-04-15 00:00") {
   # stations

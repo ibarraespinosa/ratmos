@@ -13,7 +13,7 @@ xtractor(x, points, stations, start = "2016-04-15 00:00")
 
 \item{stations}{Character; names of stations for each point.}
 
-\item{xtimes}{Logical; names of x are times in format}
+\item{start}{Character or POSIXct; first GMT hour of data.}
 }
 \value{
 Return long data.frame (for ggplot2)
@@ -26,5 +26,6 @@ Based on NCL scrip xtractor from DCA/IAG/USP
 }
 \examples{
 \dontrun{
+#do not run
 }
 }

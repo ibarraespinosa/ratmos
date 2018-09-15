@@ -21,11 +21,16 @@
 #' #dont run
 #' }
 raster_nc <- function(nc,
-                      xmin = -150, xmax = 10,
-                      ymin = -60, ymax = 40,
-                      dx = 215, dy = 135,
-                      var, z = 6,
-                      array = FALSE, verbose = TRUE){
+                      var,
+                      xmin,# = -150,
+                      xmax,# = 10,
+                      ymin,# = -60,
+                      ymax,# = 40,
+                      dx,# = 215,
+                      dy,# = 135,
+                      z,# = 6,
+                      array = FALSE,
+                      verbose = TRUE){
   f <- ncdf4::nc_open(filename = nc)
   if(verbose){
     cat(paste("The file has",f$nvars,"variables:\n"))
@@ -44,20 +49,38 @@ raster_nc <- function(nc,
     if(verbose){
       cat(paste0("\nThe '", var, "' array is ",
                  format(object.size(u), units = "Mb"), "\n"))
+      cat("Dimensions:\n")
+      cat(dim(u))
     }
   }
   if(array){
     return(u)
   }
-  a <- function(x) ifelse(x < 0, - 1, 1)
-  lon <- seq(xmin, xmax, by = length( (xmin - a(xmin)):xmax)/dx)
-  lat <- seq(ymin, ymax, by = length((ymin - a(ymin)):ymax)/dy)
+  if(missing(xmin)){
+    xmin <- readline(prompt="Enter coordinate xmin (centroid): ")
+  } else if(missing(xmax)){
+    xmin <- readline(prompt="Enter coordinate xmax (centroid): ")
+  } else if(missing(ymin)){
+    ymin <- readline(prompt="Enter coordinate ymin (centroid): ")
+  } else if(missing(ymax)){
+    ymax <- readline(prompt="Enter coordinate ymax (centroid): ")
+  } else if(missing(dx)){
+    dx <- readline(prompt="Enter number of horizontal points (dx): ")
+  } else if(missing(dy)){
+    dy <- readline(prompt="Enter number of vertical points (dy): ")
+  }
+  lon <- seq(xmin, xmax, length.out = dx)
+  if(verbose) cat(dx, " longitude points from ", lon[1], " to ",
+                  lon[length(lon)], "\n")
+  lat <- seq(ymin, ymax, length.out = dy)
+  if(verbose) cat(dy, " latitude points from ", lat[1], " to ",
+                  lat[length(lat)], "\n")
   if(length(dim(u)) == 4){
     ru1 <- ratmos::array4d(u = u, z = z, lat = lat, lon = lon)
   } else if(length(dim(u)) == 3){
     ru1 <- ratmos::array3d(u = u, z = z, lat = lat, lon = lon)
   } else if(!length(dim(u)) %in% c(3, 4)) {
-    stop("Currntly supporting arrays of 3 and 4 dimensions")
+    stop("Currently supporting arrays of 3 and 4 dimensions")
   }
   if(verbose){
     cat(paste0("\nThis ", class(ru1)," is ",

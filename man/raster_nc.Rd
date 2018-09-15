@@ -4,11 +4,13 @@
 \alias{raster_nc}
 \title{Creates raster from nc path}
 \usage{
-raster_nc(nc, xmin = -150, xmax = 10, ymin = -60, ymax = 40, dx = 215,
-  dy = 135, var, z = 6, array = FALSE, verbose = TRUE)
+raster_nc(nc, var, xmin, xmax, ymin, ymax, dx, dy, z, array = FALSE,
+  verbose = TRUE)
 }
 \arguments{
 \item{nc}{Character; Path to NetCDF.}
+
+\item{var}{Character; name of variable. If you dont know, you can choose.}
 
 \item{xmin}{Numeric; xmin coordinate.}
 
@@ -21,8 +23,6 @@ raster_nc(nc, xmin = -150, xmax = 10, ymin = -60, ymax = 40, dx = 215,
 \item{dx}{Numeric; grid spacing x.}
 
 \item{dy}{Numeric; grid spacing y.}
-
-\item{var}{Character; name of variable. If you dont know, you can choose.}
 
 \item{z}{Integer; Level (asusming third dimencion)}
 
