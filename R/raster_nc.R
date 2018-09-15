@@ -58,16 +58,27 @@ raster_nc <- function(nc,
   }
   if(missing(xmin)){
     xmin <- readline(prompt="Enter coordinate xmin (centroid): ")
-  } else if(missing(xmax)){
-    xmin <- readline(prompt="Enter coordinate xmax (centroid): ")
-  } else if(missing(ymin)){
+    xmin <- as.numeric(xmin)
+  }
+  if(missing(xmax)){
+    xmax <- readline(prompt="Enter coordinate xmax (centroid): ")
+    xmax <- as.numeric(xmax)
+  }
+  if(missing(ymin)){
     ymin <- readline(prompt="Enter coordinate ymin (centroid): ")
-  } else if(missing(ymax)){
+    ymin <- as.numeric(ymin)
+  }
+  if(missing(ymax)){
     ymax <- readline(prompt="Enter coordinate ymax (centroid): ")
-  } else if(missing(dx)){
+    ymax <- as.numeric(ymax)
+  }
+  if(missing(dx)){
     dx <- readline(prompt="Enter number of horizontal points (dx): ")
-  } else if(missing(dy)){
+    dx <- as.integer(dx)
+  }
+  if(missing(dy)){
     dy <- readline(prompt="Enter number of vertical points (dy): ")
+    dy <- as.integer(dy)
   }
   lon <- seq(xmin, xmax, length.out = dx)
   if(verbose) cat(dx, " longitude points from ", lon[1], " to ",
