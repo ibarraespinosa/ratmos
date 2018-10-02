@@ -5,7 +5,10 @@ Version: 0.1.2
 Date: 2018-09-08
 Authors@R: c(person("Sergio", "Ibarra-Espinosa", 
   role = c("aut", "cre"), email = "sergio.ibarra@usp.br", 
-    comment = c(ORCID = "0000-0002-3162-1905")))
+    comment = c(ORCID = "0000-0002-3162-1905")),
+    person("Amanda", "Rehbein", 
+  role = c("aut"), email = "amanda.rehbein@iag.usp.br", 
+    comment = c(ORCID = "0000-0002-8714-7931")))
 Description: Handle data to plot earth gridded model data.
   The idea is to, some how, replace grads.
 Depends:
