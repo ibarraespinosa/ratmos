@@ -23,4 +23,4 @@ License: MIT + file LICENSE
 URL: https://github.com/ibarraespinosa/ratmos/
 BugReports: https://github.com/ibarraespinosa/ratmos/issues/
 Encoding: UTF-8
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
