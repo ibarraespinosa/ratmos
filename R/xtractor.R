@@ -5,6 +5,7 @@
 #' @param points data.frame, matrix, SpatialPointsDataFrame.
 #' @param stations Character; names of stations for each point.
 #' @param start Character or POSIXct; first GMT hour of data.
+#' @param by Numeric, number of seconds in time sequence.
 #' @return Return long data.frame (for ggplot2)
 #' @importFrom sp coordinates proj4string
 #' @importFrom raster extract
@@ -14,7 +15,7 @@
 #' @examples \dontrun{
 #' #do not run
 #' }
-xtractor <- function(x, points, stations, start = "2016-04-15 00:00") {
+xtractor <- function(x, points, stations, start = "2016-04-15 00:00", by = 3600) {
   # stations
   if(class(points)[1] == "matrix" | class(points)[1] == "data.frame"){
     points <- as.data.frame(points)
@@ -34,7 +35,7 @@ xtractor <- function(x, points, stations, start = "2016-04-15 00:00") {
   dft <- dft[dft$key != "ID", ]
   if(!missing(start)){
   start <- as.POSIXct(start, tz = "GMT")
-  dft$times <- seq.POSIXt(start, length.out = length(names(x)), by = 3600)
+  dft$times <- seq.POSIXt(start, length.out = length(names(x)), by = by)
   }
   return(dft)
 }

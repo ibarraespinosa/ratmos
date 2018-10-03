@@ -4,7 +4,7 @@
 \alias{xtractor}
 \title{extractor from atmospheric models}
 \usage{
-xtractor(x, points, stations, start = "2016-04-15 00:00")
+xtractor(x, points, stations, start = "2016-04-15 00:00", by = 3600)
 }
 \arguments{
 \item{x}{raster (or brick)}
@@ -14,6 +14,8 @@ xtractor(x, points, stations, start = "2016-04-15 00:00")
 \item{stations}{Character; names of stations for each point.}
 
 \item{start}{Character or POSIXct; first GMT hour of data.}
+
+\item{by}{Numeric, number of seconds in time sequence.}
 }
 \value{
 Return long data.frame (for ggplot2)
