@@ -19,9 +19,9 @@ xtractor <- function(x, points, stations, start = "2016-04-15 00:00", by = 3600)
   # stations
   if(class(points)[1] == "matrix" | class(points)[1] == "data.frame"){
     points <- as.data.frame(points)
-    if(!names(points) %in% c("x", "y")){
-      stop("Names of df must be x and y")
-    }
+    # if(!names(points) %in% c("x", "y")){
+    #   stop("Names of df must be x and y")
+    # }
     sp::coordinates(points) <- data.frame(x = points$x, y = points$y)
     sp::proj4string(points) <- "+init=epsg:4326"
   }
