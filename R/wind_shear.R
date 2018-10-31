@@ -43,7 +43,7 @@ wind_shear <- function(u,
     wsh <- sqrt((utop - ubottom)^2 + (vtop - vbottom)^2)/zdiff
   }
   if(dataframe){
-    df <- as.data.frame(cbind(utop, ubottom, vtop, vbot0tom, wsh))
+    df <- as.data.frame(cbind(utop, ubottom, vtop, vbottom, wsh))
     return(df)
   } else{
     return(wsh)
