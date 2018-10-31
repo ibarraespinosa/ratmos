@@ -40,6 +40,33 @@ wind_shear <- function(u,
       vtop[j, i] <- c(dff_top$v)
     }
   }
+lapply(1:lbottom, function(i){
+  lapply(1:ltop, function(j){
+    dff_bottom <- dff[dff$zlev == zlev_bottom[i], ]
+    dff_top <- dff[dff$zlev == zlev_top[j], ]
+
+    ws[j,i] <- sqrt((dff_top$u - dff_bottom$u)^2 +
+                      (dff_top$v - dff_bottom$v)^2)
+    ubottom[j, i] <- c(dff_bottom$u)
+    vbottom[j, i] <- c(dff_bottom$v)
+    utop[j, i] <- c(dff_top$u)
+    vtop[j, i] <- c(dff_top$v)
+  })
+})
+  for(i in 1:lbottom){
+    for(j in 1:ltop){
+      dff_bottom <- dff[dff$zlev == zlev_bottom[i], ]
+      dff_top <- dff[dff$zlev == zlev_top[j], ]
+
+      ws[j,i] <- sqrt((dff_top$u - dff_bottom$u)^2 +
+                        (dff_top$v - dff_bottom$v)^2)
+      ubottom[j, i] <- c(dff_bottom$u)
+      vbottom[j, i] <- c(dff_bottom$v)
+      utop[j, i] <- c(dff_top$u)
+      vtop[j, i] <- c(dff_top$v)
+    }
+  }
+
 
      df <- data.frame(zbottom = rep(zlev_bottom, each = length(zlev_top)))
     df$ztop <- rep(zlev_top, length(zlev_bottom))

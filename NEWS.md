@@ -3,8 +3,9 @@ NEWS
 
 # ratmos 0.1.5 (Release date: 2018-10-31)
 
-- update wind_shear.
-- it just imports sp and raster
+- Update wind_shear.
+- It just imports sp and raster
+- Add Tlcl, theta, tk
 
 # ratmos 0.1.4 (Release date: 2018-10-27)
 
