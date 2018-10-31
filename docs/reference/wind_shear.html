@@ -111,39 +111,34 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>wind_shear</span>(<span class='no'>u</span>, <span class='no'>v</span>, <span class='no'>zlev</span>, <span class='no'>at_zlev</span>, <span class='no'>zdiff</span>, <span class='kw'>ascending</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>dataframe</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>wind_shear</span>(<span class='no'>u</span>, <span class='no'>v</span>, <span class='no'>zlev</span>, <span class='no'>zlev_bottom</span>, <span class='no'>zlev_top</span>, <span class='kw'>dataframe</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>u</th>
-      <td><p>Numeric;</p></td>
+      <td><p>Numeric; u component of wind</p></td>
     </tr>
     <tr>
       <th>v</th>
-      <td><p>Numeric;</p></td>
+      <td><p>Numeric; v component of wind</p></td>
     </tr>
     <tr>
       <th>zlev</th>
-      <td><p>Numeric;</p></td>
+      <td><p>Numeric; levels of each wind</p></td>
     </tr>
     <tr>
-      <th>at_zlev</th>
-      <td><p>Numeric;</p></td>
+      <th>zlev_bottom</th>
+      <td><p>Numeric; bottom nivels to calculate wind shear, from zlev</p></td>
     </tr>
     <tr>
-      <th>zdiff</th>
-      <td><p>Numeric;</p></td>
-    </tr>
-    <tr>
-      <th>ascending</th>
-      <td><p>Logical;</p></td>
+      <th>zlev_top</th>
+      <td><p>Numeric; top nivels to calculate wind shear, from zlev</p></td>
     </tr>
     <tr>
       <th>dataframe</th>
-      <td><p>Logical;</p></td>
+      <td><p>Logical; Do you want a data.frame with all values?</p></td>
     </tr>
     </table>
     

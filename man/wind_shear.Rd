@@ -4,7 +4,7 @@
 \alias{wind_shear}
 \title{Calculates Wind Shear}
 \usage{
-wind_shear(u, v, zlev, zlev_bottom, zlev_top, dataframe = FALSE)
+wind_shear(u, v, zlev, zlev_bottom, zlev_top, list = FALSE)
 }
 \arguments{
 \item{u}{Numeric; u component of wind}
@@ -17,7 +17,7 @@ wind_shear(u, v, zlev, zlev_bottom, zlev_top, dataframe = FALSE)
 
 \item{zlev_top}{Numeric; top nivels to calculate wind shear, from zlev}
 
-\item{dataframe}{Logical; Do you want a data.frame with all values?}
+\item{list}{Logical; Do you want a list of data.frames with all values?}
 }
 \description{
 \code{\link{wind_shear}} Creates raster from nc path
