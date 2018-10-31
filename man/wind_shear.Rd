@@ -4,23 +4,20 @@
 \alias{wind_shear}
 \title{Calculates Wind Shear}
 \usage{
-wind_shear(u, v, zlev, at_zlev, zdiff, ascending = TRUE,
-  dataframe = FALSE)
+wind_shear(u, v, zlev, zlev_bottom, zlev_top, dataframe = FALSE)
 }
 \arguments{
-\item{u}{Numeric;}
+\item{u}{Numeric; u component of wind}
 
-\item{v}{Numeric;}
+\item{v}{Numeric; v component of wind}
 
-\item{zlev}{Numeric;}
+\item{zlev}{Numeric; levels of each wind}
 
-\item{at_zlev}{Numeric;}
+\item{zlev_bottom}{Numeric; bottom nivels to calculate wind shear, from zlev}
 
-\item{zdiff}{Numeric;}
+\item{zlev_top}{Numeric; top nivels to calculate wind shear, from zlev}
 
-\item{ascending}{Logical;}
-
-\item{dataframe}{Logical;}
+\item{dataframe}{Logical; Do you want a data.frame with all values?}
 }
 \description{
 \code{\link{wind_shear}} Creates raster from nc path

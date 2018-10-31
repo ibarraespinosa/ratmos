@@ -1,6 +1,10 @@
 NEWS
 ===========
 
+# ratmos 0.1.5 (Release date: 2018-10-31)
+
+- update wind_shear
+
 # ratmos 0.1.4 (Release date: 2018-10-27)
 
 - Add wind_shear

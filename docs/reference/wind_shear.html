@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>extractor from atmospheric models — xtractor • ratmos</title>
+<title>Calculates Wind Shear — wind_shear • ratmos</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="extractor from atmospheric models — xtractor" />
+<meta property="og:title" content="Calculates Wind Shear — wind_shear" />
 
-<meta property="og:description" content="Return data.framee" />
+<meta property="og:description" content="wind_shear Creates raster from nc path" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,56 +100,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>extractor from atmospheric models</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/xtractor.R'><code>R/xtractor.R</code></a></small>
-    <div class="hidden name"><code>xtractor.Rd</code></div>
+    <h1>Calculates Wind Shear</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/wind_shear.R'><code>R/wind_shear.R</code></a></small>
+    <div class="hidden name"><code>wind_shear.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Return data.framee</p>
+    <p><code>wind_shear</code> Creates raster from nc path</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>xtractor</span>(<span class='no'>x</span>, <span class='no'>points</span>, <span class='no'>stations</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='st'>"2016-04-15 00:00"</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>3600</span>)</pre>
+    <pre class="usage"><span class='fu'>wind_shear</span>(<span class='no'>u</span>, <span class='no'>v</span>, <span class='no'>zlev</span>, <span class='no'>at_zlev</span>, <span class='no'>zdiff</span>, <span class='kw'>ascending</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>dataframe</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>raster (or brick)</p></td>
+      <th>u</th>
+      <td><p>Numeric;</p></td>
     </tr>
     <tr>
-      <th>points</th>
-      <td><p>data.frame, matrix, SpatialPointsDataFrame.</p></td>
+      <th>v</th>
+      <td><p>Numeric;</p></td>
     </tr>
     <tr>
-      <th>stations</th>
-      <td><p>Character; names of stations for each point.</p></td>
+      <th>zlev</th>
+      <td><p>Numeric;</p></td>
     </tr>
     <tr>
-      <th>start</th>
-      <td><p>Character or POSIXct; first GMT hour of data.</p></td>
+      <th>at_zlev</th>
+      <td><p>Numeric;</p></td>
     </tr>
     <tr>
-      <th>by</th>
-      <td><p>Numeric, number of seconds in time sequence.</p></td>
+      <th>zdiff</th>
+      <td><p>Numeric;</p></td>
+    </tr>
+    <tr>
+      <th>ascending</th>
+      <td><p>Logical;</p></td>
+    </tr>
+    <tr>
+      <th>dataframe</th>
+      <td><p>Logical;</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Return long data.frame (for ggplot2)</p>
-    
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p>Based on NCL scrip xtractor from DCA/IAG/USP</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"># NOT RUN {
-#do not run
+#dont run
 # }
 </pre>
   </div>
@@ -157,11 +158,7 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#note">Note</a></li>
-      
+            
       <li><a href="#examples">Examples</a></li>
     </ul>
 
