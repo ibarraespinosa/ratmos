@@ -41,17 +41,19 @@ wind_shear <- function(u,
     }
   }
 
-  if(list){
-    df <- data.frame(zbottom = rep(zlev_bottom, each = length(zlev_top)))
+     df <- data.frame(zbottom = rep(zlev_bottom, each = length(zlev_top)))
     df$ztop <- rep(zlev_top, length(zlev_bottom))
     df$ubottom <- unlist(ubottom)
     df$vbottom <- unlist(vbottom)
     df$utop <- unlist(utop)
     df$vtop <- unlist(vtop)
     df$ws <- unlist(ws)
-    return(list(ws, df))
+    if(list){
+      return(list(ws, df))
   } else{
-    return(unlist(ws))
+    ws <- unlist(ws)
+    names(ws) <- paste(df$zbottom, df$ztop,sep =  "_")
+    return(ws)
   }
 
 
