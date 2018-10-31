@@ -29,13 +29,10 @@ wind_shear <- function(u,
   row.names(ws) <- zlev_top
   names(ws) <- zlev_bottom
   ubottom <- utop <- vbottom <- vtop <- ws
-  print(dim(ws))
   for(i in 1:lbottom){
     for(j in 1:ltop){
       dff_bottom <- dff[dff$zlev == zlev_bottom[i], ]
-      print(dff_bottom)
       dff_top <- dff[dff$zlev == zlev_top[j], ]
-      print(dff_top)
 
       ws[j,i] <- sqrt((dff_top$u - dff_bottom$u)^2 +
                         (dff_top$v - dff_bottom$v)^2)
@@ -56,7 +53,7 @@ wind_shear <- function(u,
     df$ws <- unlist(ws)
     return(list(ws, df))
   } else{
-    return(as.vector(ws))
+    return(unlist(ws))
   }
 
 
