@@ -9,6 +9,11 @@ NEWS
 
 - Add Readme.Rmd
 
+## ratmos 0.1.2 (Release date: 2018-10-01)
+
+- Adds array2d
+- Improves raster_wrf to 2D arrays
+
 ## ratmos 0.1.0 (Release date: 2018-09-07)
 
 - Release ratmos
