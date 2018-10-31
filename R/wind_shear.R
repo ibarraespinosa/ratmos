@@ -20,9 +20,7 @@ wind_shear <- function(u,
                         list = FALSE) {
   # La idea es comparar niveles base con varios niveles verticales
   lbottom <- length(zlev_bottom)
-  print(lbottom)
   ltop <- length(zlev_top)
-  print(ltop)
 
   dff <- data.frame(u, v, zlev)
   ws  <- as.data.frame(matrix(NA, ncol = lbottom, nrow = ltop))

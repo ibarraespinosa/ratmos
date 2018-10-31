@@ -11,12 +11,11 @@ Authors@R: c(person("Sergio", "Ibarra-Espinosa",
     comment = c(ORCID = "0000-0002-8714-7931")))
 Description: Handle data to plot earth gridded model data.
   The idea is to, some how, replace grads.
-Depends:
-  raster,
-  sp
 Imports:
 	ncdf4,
-	tidyr
+	tidyr,
+	raster,
+	sp
 Suggests: 
 	cptcity
 License: MIT + file LICENSE
