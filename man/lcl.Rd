@@ -57,7 +57,8 @@ between water vapor and liquid at the triple point. Default =
 \item{cpv}{Numeric; cvv + rgasv}
 }
 \description{
-\code{\link{lcl}} calculates the Lifting Level Level in meters.
+\code{\link{lcl}} calculates the Lifting Level Level in
+meters.
 }
 \examples{
 {

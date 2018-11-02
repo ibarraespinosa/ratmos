@@ -1,6 +1,7 @@
 #' Lifting Level Level
 #'
-#' @description \code{\link{lcl}} calculates the Lifting Level Level in meters.
+#' @description \code{\link{lcl}} calculates the Lifting Level Level in
+#' meters.
 #'
 #' @param p Numeric; presusre in Pascals.
 #' @param tk Numeric; temperature in Kelvin.
@@ -28,6 +29,7 @@
 #' @param cpa Numeric; cva + rgasa
 #' @param cpv Numeric; cvv + rgasv
 #' @importFrom LambertW W
+#' @importFrom units as_units
 #' @export
 #' @references  Romps, D. M. (2017). Exact Expression for the
 #' Lifting Condensation Level. Journal of the Atmospheric Sciences,
@@ -139,6 +141,8 @@ lcl <- function(p,
   ldl <- cpm*tk/ggr*( 1 - bs/(as*LambertW::W(bs/as*cs^(1/as),-1)) )
 
   # Return either lcl or ldl
+lcl <- lcl*units::as_units("m")
+lsl <- ldl*units::as_units("m")
   if (return_ldl & return_min_lcl_ldl) {
     stop('return_ldl and return_min_lcl_ldl cannot both be true')
   } else if (return_ldl) {

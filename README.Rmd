@@ -11,7 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # RATMOS
 
-To convert your data from NetCDF atmospheric models to raster and extract datra.
+To convert your data from NetCDF atmospheric models to raster,extract data.
+Now includes some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/lcl.html)
 
 [![Travis-CI Build Status](https://img.shields.io/badge/lifecycle-experimental-orange.svg?branch=master)](https://travis-ci.org/ibarraespinosa/ratmos)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ibarraespinosa/ratmos?branch=master&svg=true)](https://ci.appveyor.com/project/ibarraespinosa/ratmos)

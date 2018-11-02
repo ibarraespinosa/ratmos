@@ -3,7 +3,8 @@ NEWS
 
 # ratmos 0.1.6 (Release date: 2018-11-02)
 
-- Adds calculation of lcl using David Romps (University of California Berkeley) function http://romps.berkeley.edu/pubs/pubs-2016-lcl.html#pubs-2016-lcl-code  which imports W from LambertW
+- Adds calculation of lcl using David Romps (University of California Berkeley) function http://romps.berkeley.edu/pubs/pubs-2016-lcl.html#pubs-2016-lcl-code  which imports W from LambertW.
+- Incorporates units in outputs.
 
 # ratmos 0.1.5 (Release date: 2018-10-31)
 
