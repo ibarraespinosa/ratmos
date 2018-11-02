@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ratmos</title>
+<title>Temperature absolute Kelvin — tk • ratmos</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Temperature absolute Kelvin — tk" />
+
+<meta property="og:description" content="tk Calculates absolute temerature Kelvin" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -46,7 +49,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -95,126 +98,53 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Temperature absolute Kelvin</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/tk.R'><code>R/tk.R</code></a></small>
+    <div class="hidden name"><code>tk.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p><code>tk</code> Calculates absolute temerature Kelvin</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="Tncl.html">Tncl()</a></code> </p>
-        </td>
-        <td><p>Temperature of lift condensation level</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="array3d.html">array3d()</a></code> </p>
-        </td>
-        <td><p>raster to nc 3d</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="array4d.html">array4d()</a></code> </p>
-        </td>
-        <td><p>raster to nc 4d</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cetesb.html">cetesb</a></code> </p>
-        </td>
-        <td><p>Location some air quality stations CETESB</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="gfs.html">gfs()</a></code> </p>
-        </td>
-        <td><p>Get GFS files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="lcl.html">lcl()</a></code> </p>
-        </td>
-        <td><p>Lifting Level Level</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="raster_nc.html">raster_nc()</a></code> </p>
-        </td>
-        <td><p>Creates raster from nc path</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="raster_wrf.html">raster_wrf()</a></code> </p>
-        </td>
-        <td><p>Creates raster from nc path</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ratmos.html">ratmos</a></code> </p>
-        </td>
-        <td><p>ratmos: a package to read gridded model outputs, convert them to raster and plot</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="seqraster.html">seqraster()</a></code> </p>
-        </td>
-        <td><p>Sequence of raster</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="theta.html">theta()</a></code> </p>
-        </td>
-        <td><p>Potential Temperature</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="theta_e.html">theta_e()</a></code> </p>
-        </td>
-        <td><p>Equivalent Potential Temperature</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tk.html">tk()</a></code> </p>
-        </td>
-        <td><p>Temperature absolute Kelvin</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="wind_shear.html">wind_shear()</a></code> </p>
-        </td>
-        <td><p>Calculates Wind Shear</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="xtractor.html">xtractor()</a></code> </p>
-        </td>
-        <td><p>extractor from atmospheric models</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>tk</span>(<span class='no'>temperature</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>temperature</th>
+      <td><p>Numeric temperature in celcius</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
+    <p>Bolton, D. (1980). The computation of equivalent potential
+temperature. Monthly weather review, 108(7), 1046-1053.
+Equation 1</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"># NOT RUN {
+#dont run
+# }
+</pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#references">References</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 

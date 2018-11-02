@@ -1,8 +1,8 @@
 Package: ratmos
 Type: Package
 Title: Tools for handle and plot output of earth models
-Version: 0.1.5
-Date: 2018-10-31
+Version: 0.1.6
+Date: 2018-11-02
 Authors@R: c(person("Sergio", "Ibarra-Espinosa", 
   role = c("aut", "cre"), email = "sergio.ibarra@usp.br", 
     comment = c(ORCID = "0000-0002-3162-1905")),
@@ -15,7 +15,8 @@ Imports:
 	ncdf4,
 	tidyr,
 	raster,
-	sp
+	sp,
+	LambertW
 Suggests: 
 	cptcity
 License: MIT + file LICENSE
