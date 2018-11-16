@@ -35,15 +35,18 @@
 #' Lifting Condensation Level. Journal of the Atmospheric Sciences,
 #' 74(12), 3891-3900.
 #' @examples {
-#' if (
-#' abs(lcl(1e5,300,rhl=.5,return_ldl=FALSE)/( 1433.844139279)-1) < 1e-10 &
-#' abs(lcl(1e5,300,rhs=.5,return_ldl=FALSE)/( 923.2222457185)-1) < 1e-10 &
-#' abs(lcl(1e5,200,rhl=.5,return_ldl=FALSE)/( 542.8017712435)-1) < 1e-10 &
-#' abs(lcl(1e5,200,rhs=.5,return_ldl=FALSE)/( 1061.585301941)-1) < 1e-10 &
-#' abs(lcl(1e5,300,rhl=.5,return_ldl=TRUE )/( 1639.249726127)-1) < 1e-10 &
-#' abs(lcl(1e5,300,rhs=.5,return_ldl=TRUE )/( 1217.336637217)-1) < 1e-10 &
-#' abs(lcl(1e5,200,rhl=.5,return_ldl=TRUE )/(-8.609834216556)-1) < 1e-10 &
-#' abs(lcl(1e5,200,rhs=.5,return_ldl=TRUE )/( 508.6366558898)-1) < 1e-10 ) {
+#' a <- abs(lcl(1e5,300,rhl=.5,return_ldl=FALSE))
+#' b <- 1433.844139279*units::as_units("m")
+#' c <- 1
+#' as.numeric(a / b) - c < 1e-10
+#' if(
+#' abs(as.numeric(lcl(1e5,300,rhs=.5,return_ldl=FALSE))/( 923.2222457185)-1) < 1e-10 &
+#' abs(as.numeric(lcl(1e5,200,rhl=.5,return_ldl=FALSE))/( 542.8017712435)-1) < 1e-10 &
+#' abs(as.numeric(lcl(1e5,200,rhs=.5,return_ldl=FALSE))/( 1061.585301941)-1) < 1e-10 &
+#' abs(as.numeric(lcl(1e5,300,rhl=.5,return_ldl=TRUE ))/( 1639.249726127)-1) < 1e-10 &
+#' abs(as.numeric(lcl(1e5,300,rhs=.5,return_ldl=TRUE ))/( 1217.336637217)-1) < 1e-10 &
+#' abs(as.numeric(lcl(1e5,200,rhl=.5,return_ldl=TRUE ))/(-8.609834216556)-1) < 1e-10 &
+#' abs(as.numeric(lcl(1e5,200,rhs=.5,return_ldl=TRUE ))/( 508.6366558898)-1) < 1e-10 ) {
 #' cat('Success\n')
 #' } else {
 #'   cat('Failure\n')

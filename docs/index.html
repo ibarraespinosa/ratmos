@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tools for handle and plot output of earth models • ratmos</title>
+<title>Tools for handle and plot meteorological data including output of earth models • ratmos</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Tools for handle and plot output of earth models">
+<script src="pkgdown.js"></script><meta property="og:title" content="Tools for handle and plot meteorological data including output of earth models">
 <meta property="og:description" content="Handle data to plot earth gridded model data.
-  The idea is to, some how, replace grads.">
+  Download climate indices and GFS. Calcualte LCL.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -19,7 +19,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ratmos</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.6</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.7</span>
       </span>
     </div>
 
@@ -66,16 +66,15 @@
 
       
       </header><div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     
-
-    
-    
+<hr>
+<p>title: “ratmos model” author: “Sergio Ibarra-Espinosa” date: “7 de Septiembre de 2018” output: html_document —</p>
 <div id="ratmos" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#ratmos" class="anchor"></a>RATMOS</h1></div>
-<p>To convert your data from NetCDF atmospheric models to raster,extract data. Now includes some meteorological function such as <a href="https://ibarraespinosa.github.io/ratmos/wind_shear.html">wind_shear</a> and <a href="https://ibarraespinosa.github.io/ratmos/lcl.html">lcl</a></p>
-<p><a href="https://travis-ci.org/ibarraespinosa/ratmos"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/ibarraespinosa/ratmos"><img src="https://ci.appveyor.com/api/projects/status/github/ibarraespinosa/ratmos?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <a href="http://cran.rstudio.com/web/packages/ratmos/index.html"><img src="http://cranlogs.r-pkg.org/badges/ratmos"></a> <a href="https://codecov.io/github/ibarraespinosa/ratmos?branch=master"><img src="https://img.shields.io/codecov/c/github/ibarraespinosa/ratmos/master.svg" alt="Coverage Status"></a> <a href="http://cran.r-project.org/web/packages/ratmos"><img src="http://www.r-pkg.org/badges/version/ratmos" alt="CRAN_Status_Badge"></a> <a href="http://cran.r-project.org/package=ratmos"><img src="http://cranlogs.r-pkg.org/badges/grand-total/ratmos?color=orange" alt="CRAN Downloads"></a> <a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-organce.svg" alt="Package Status"></a></p>
+<p><a href="https://travis-ci.org/ibarraespinosa/ratmos"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/ibarraespinosa/ratmos"><img src="https://ci.appveyor.com/api/projects/status/github/ibarraespinosa/ratmos?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <a href="http://cran.rstudio.com/web/packages/ratmos/index.html"><img src="http://cranlogs.r-pkg.org/badges/ratmos"></a> <a href="https://codecov.io/github/ibarraespinosa/ratmos?branch=master"><img src="https://img.shields.io/codecov/c/github/ibarraespinosa/ratmos/master.svg" alt="Coverage Status"></a> <a href="http://cran.r-project.org/web/packages/ratmos"><img src="http://www.r-pkg.org/badges/version/ratmos" alt="CRAN_Status_Badge"></a> <a href="http://cran.r-project.org/package=ratmos"><img src="http://cranlogs.r-pkg.org/badges/grand-total/ratmos?color=orange" alt="CRAN Downloads"></a> <a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-organce.svg" alt="Package Status"></a> <a href="https://github.com/ibarraespinosa/ratmos"><img src="https://img.shields.io/github/stars/ibarraespinosa/ratmos.svg?style=social&amp;label=Github" alt="Github Stars"></a></p>
+<p>Package to process meteorological data. I includes converting your data from NetCDF atmospheric models to raster with special functions to WRF and RegCM. Now includes some meteorological function such as <a href="https://ibarraespinosa.github.io/ratmos/wind_shear.html">wind_shear</a> and <a href="https://ibarraespinosa.github.io/ratmos/lcl.html">lcl</a></p>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
@@ -86,29 +85,40 @@
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
-<ol style="list-style-type: decimal">
+<ul>
 <li>Put the path of your netcdf file.</li>
-</ol>
+</ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ratmos)
-r &lt;-<span class="st"> </span><span class="kw"><a href="reference/raster_nc.html">raster_nc</a></span>(<span class="st">"file.nc"</span>)</code></pre></div>
-<p>If you are using WRF, use this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r &lt;-<span class="st"> </span><span class="kw"><a href="reference/raster_wrf.html">raster_wrf</a></span>(<span class="st">"file.nc"</span>)</code></pre></div>
-<ol start="2" style="list-style-type: decimal">
+r &lt;-<span class="st"> </span><span class="kw"><a href="reference/raster_nc.html">raster_nc</a></span>(<span class="st">"file.nc"</span>)
+r &lt;-<span class="st"> </span><span class="kw"><a href="reference/raster_wrf.html">raster_wrf</a></span>(<span class="st">"file.nc"</span>)
+r &lt;-<span class="st"> </span><span class="kw"><a href="reference/raster_regcm.html">raster_regcm</a></span>(<span class="st">"file.nc"</span>) <span class="co">#experimental</span></code></pre></div>
+<ul>
 <li>Extract your info in a data.frame in long format.</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(cetesb) <span class="co">#SpatialPointsDataFrame</span>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ratmos)
+<span class="kw">data</span>(cetesb) <span class="co">#SpatialPointsDataFrame</span>
 df &lt;-<span class="st"> </span><span class="kw"><a href="reference/xtractor.html">xtractor</a></span>(<span class="dt">x =</span> r,                      <span class="co"># raster</span>
                <span class="dt">points =</span> cetesb,            <span class="co"># SpatialPointsDataFrame</span>
                <span class="dt">station =</span> cetesb<span class="op">$</span>Station,   <span class="co"># Name of each point</span>
                <span class="dt">start =</span> <span class="st">"2016-04-15 00:00"</span>) <span class="co"># First hour</span></code></pre></div>
+<ul>
+<li>Download climate index</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ratmos)
+b &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_all_index.html">get_all_index</a></span>(<span class="dt">olr =</span> <span class="ot">FALSE</span>)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(cptcity)
+<span class="kw"><a href="ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(b, <span class="kw"><a href="ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> index, <span class="dt">colour =</span> index)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>()<span class="op">+</span>
+<span class="kw"><a href="ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span>(<span class="op">~</span>name, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">"free"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>() <span class="op">+</span>
+<span class="kw"><a href="ggplot2.tidyverse.org/reference/scale_gradient.html">scale_colour_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw">rev</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/cptcity/topics/cpt">cpt</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/cptcity/topics/find_cpt">find_cpt</a></span>(<span class="st">"cb_div_RdB"</span>)[<span class="dv">2</span>])), <span class="dt">limit =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">4.6</span>, <span class="fl">4.6</span>))</code></pre></div>
+<p><img src="https://i.imgur.com/sdCXJ6g.png"></p>
 <p>Please, READ THE DOCUMENTATION: <a href="https://ibarraespinosa.github.io/ratmos/" class="uri">https://ibarraespinosa.github.io/ratmos/</a></p>
 <p>Thanks and enjoy ratmos!</p>
 </div>
 <div id="issues" class="section level2">
 <h2 class="hasAnchor">
 <a href="#issues" class="anchor"></a>Issues</h2>
-<p>If you encounter any issues while using ratmos, please submit your issues to: <a href="https://github.com/ibarraespinosa/ratmos/issues/" class="uri">https://github.com/ibarraespinosa/ratmos/issues/</a></p>
-<p>If you have any suggestions just let me know to <a href="mailto:sergio.ibarra@usp.br">sergio.ibarra@usp.br</a>.</p>
+<p>If you encounter any issues while using ratmos, please submit your issues to: <a href="https://github.com/ibarraespinosa/ratmos/issues/" class="uri">https://github.com/ibarraespinosa/ratmos/issues/</a> If you have any suggestions just let me know to <a href="mailto:sergio.ibarra@usp.br">sergio.ibarra@usp.br</a>.</p>
 <div id="contributing" class="section level3">
 <h3 class="hasAnchor">
 <a href="#contributing" class="anchor"></a>Contributing</h3>
@@ -116,9 +126,10 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/xtractor.ht
 </div>
 </div>
 </div>
+
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3" id="sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
@@ -144,8 +155,7 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/xtractor.ht
 </ul>
 </div>
 
-      </div>
-
+  </div>
 </div>
 
 

@@ -1,8 +1,8 @@
 Package: ratmos
 Type: Package
-Title: Tools for handle and plot output of earth models
-Version: 0.1.6
-Date: 2018-11-02
+Title: Tools for handle and plot meteorological data including output of earth models
+Version: 0.1.7
+Date: 2018-11-15
 Authors@R: c(person("Sergio", "Ibarra-Espinosa", 
   role = c("aut", "cre"), email = "sergio.ibarra@usp.br", 
     comment = c(ORCID = "0000-0002-3162-1905")),
@@ -10,18 +10,20 @@ Authors@R: c(person("Sergio", "Ibarra-Espinosa",
   role = c("aut"), email = "amanda.rehbein@iag.usp.br", 
     comment = c(ORCID = "0000-0002-8714-7931")))
 Description: Handle data to plot earth gridded model data.
-  The idea is to, some how, replace grads.
+  Download climate indices and GFS. Calcualte LCL.
 Imports:
 	ncdf4,
 	tidyr,
 	raster,
 	sp,
 	LambertW,
-	units
+	units,
+	RCurl,
+	stats
 Suggests: 
 	cptcity
 License: MIT + file LICENSE
 URL: https://github.com/ibarraespinosa/ratmos/
 BugReports: https://github.com/ibarraespinosa/ratmos/issues/
 Encoding: UTF-8
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates raster from nc path — raster_nc • ratmos</title>
+<title>Get all index in long format — get_all_index • ratmos</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Creates raster from nc path — raster_nc" />
+<meta property="og:title" content="Get all index in long format — get_all_index" />
 
-<meta property="og:description" content="raster_nc Creates raster from nc path" />
+<meta property="og:description" content="get_all_index Downloads all index returning a data.frame" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,79 +100,77 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates raster from nc path</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/raster_nc.R'><code>R/raster_nc.R</code></a></small>
-    <div class="hidden name"><code>raster_nc.Rd</code></div>
+    <h1>Get all index in long format</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/get_all_index.R'><code>R/get_all_index.R</code></a></small>
+    <div class="hidden name"><code>get_all_index.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>raster_nc</code> Creates raster from nc path</p>
+    <p><code>get_all_index</code> Downloads all index returning a data.frame</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>raster_nc</span>(<span class='no'>nc</span>, <span class='no'>var</span>, <span class='no'>xmin</span>, <span class='no'>xmax</span>, <span class='no'>ymin</span>, <span class='no'>ymax</span>, <span class='no'>dx</span>, <span class='no'>dy</span>, <span class='no'>z</span>, <span class='kw'>array</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_all_index</span>(<span class='kw'>nao</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>olr</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>oni</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>pdo</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>pna</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>soi</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>sstoi</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>nc</th>
-      <td><p>Character; Path to NetCDF.</p></td>
+      <th>nao</th>
+      <td><p>Logica; inlude nao?</p></td>
     </tr>
     <tr>
-      <th>var</th>
-      <td><p>Character; name of variable. If you dont know, you can choose.</p></td>
+      <th>olr</th>
+      <td><p>Logica; inlude olr?</p></td>
     </tr>
     <tr>
-      <th>xmin</th>
-      <td><p>Numeric; xmin coordinate.</p></td>
+      <th>oni</th>
+      <td><p>Logica; inlude oni?</p></td>
     </tr>
     <tr>
-      <th>xmax</th>
-      <td><p>Numeric; xmax coordinate.</p></td>
+      <th>pdo</th>
+      <td><p>Logica; inlude pdo?</p></td>
     </tr>
     <tr>
-      <th>ymin</th>
-      <td><p>Numeric; ymin coordinate.</p></td>
+      <th>pna</th>
+      <td><p>Logica; inlude pna?</p></td>
     </tr>
     <tr>
-      <th>ymax</th>
-      <td><p>Numeric; ymax coordinate.</p></td>
+      <th>soi</th>
+      <td><p>Logica; inlude soi?</p></td>
     </tr>
     <tr>
-      <th>dx</th>
-      <td><p>Numeric; grid spacing x.</p></td>
-    </tr>
-    <tr>
-      <th>dy</th>
-      <td><p>Numeric; grid spacing y.</p></td>
-    </tr>
-    <tr>
-      <th>z</th>
-      <td><p>Integer; Level (asusming third dimencion)</p></td>
-    </tr>
-    <tr>
-      <th>array</th>
-      <td><p>Logical; return array or not.</p></td>
-    </tr>
-    <tr>
-      <th>verbose</th>
-      <td><p>Logical; To show operations.</p></td>
+      <th>sstoi</th>
+      <td><p>Logica; inlude sstoi?</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>raster</p>
+    <p>data.frame</p>
+    
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>From https://www.ncdc.noaa.gov/teleconnections/enso/indicators/</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"># NOT RUN {
-#dont run
-# }
-</pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='co'>#do not run</span>
+<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>get_all_index</span>()
+<span class='fu'>head</span>(<span class='no'>a</span>)
+<span class='fu'>tail</span>(<span class='no'>a</span>)
+<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'>get_all_index</span>(<span class='kw'>olr</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>library</span>(<span class='no'>ggplot2</span>)
+<span class='fu'>library</span>(<span class='no'>cptcity</span>)
+<span class='fu'><a href='ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>b</span>, <span class='fu'><a href='ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>Date</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>index</span>, <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>index</span>)) + <span class='fu'><a href='ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>()+
+<span class='fu'><a href='ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span>(~<span class='no'>name</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>scales</span> <span class='kw'>=</span> <span class='st'>"free"</span>) + <span class='fu'><a href='ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>() +
+<span class='fu'><a href='ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_colour_gradientn</a></span>(<span class='kw'>colours</span> <span class='kw'>=</span> <span class='fu'>rev</span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/cptcity/topics/cpt'>cpt</a></span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/cptcity/topics/find_cpt'>find_cpt</a></span>(<span class='st'>"cb_div_RdB"</span>)[<span class='fl'>2</span>])), <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fu'>c</span>(-<span class='fl'>4.6</span>, <span class='fl'>4.6</span>))
+<span class='fu'>head</span>(<span class='no'>b</span>)
+<span class='fu'>tail</span>(<span class='no'>b</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -180,6 +178,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#note">Note</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

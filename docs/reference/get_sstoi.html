@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Equivalent Potential Temperature — thetae • ratmos</title>
+<title>Get Sea Surface Temperature Oceanic Index Data (sstoi) — get_sstoi • ratmos</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Equivalent Potential Temperature — thetae" />
+<meta property="og:title" content="Get Sea Surface Temperature Oceanic Index Data (sstoi) — get_sstoi" />
 
-<meta property="og:description" content="thetae Calculates potential temperature
-equivalent" />
+<meta property="og:description" content="get_sstoi Downloads ONI data returning a data.frame" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,62 +100,60 @@ equivalent" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Equivalent Potential Temperature</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/thetae.R'><code>R/thetae.R</code></a></small>
-    <div class="hidden name"><code>thetae.Rd</code></div>
+    <h1>Get Sea Surface Temperature Oceanic Index Data (sstoi)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/get_sstoi.R'><code>R/get_sstoi.R</code></a></small>
+    <div class="hidden name"><code>get_sstoi.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>thetae</code> Calculates potential temperature
-equivalent</p>
+    <p><code>get_sstoi</code> Downloads ONI data returning a data.frame</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>thetae</span>(<span class='no'>theta</span>, <span class='no'>r</span>, <span class='no'>Tlcl</span>)</pre>
+    <pre class="usage"><span class='fu'>get_sstoi</span>(<span class='kw'>long</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>only_anomaly</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>theta</th>
-      <td><p>Numeric; potential temperature in kelvin</p></td>
+      <th>long</th>
+      <td><p>Logical; Return data.frame in long format?</p></td>
     </tr>
     <tr>
-      <th>r</th>
-      <td><p>Numeric; mixing ratio (kg/kg)</p></td>
-    </tr>
-    <tr>
-      <th>Tlcl</th>
-      <td><p>Numeric; lifting condensation level Kelvin</p></td>
+      <th>only_anomaly</th>
+      <td><p>Logical; only anomalies??</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Bolton, D. (1980). The computation of equivalent potential
-temperature. Monthly weather review, 108(7), 1046-1053.
-Eq 35</p>
+    <p>data.frame</p>
     
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <div class='dont-index'><p><code><a href='theta.html'>theta</a></code></p></div>
+    <p>From https://www.ncdc.noaa.gov/teleconnections/enso/indicators/sst/</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"># NOT RUN {
-#dont run
-# }
-</pre>
+    <pre class="examples"><div class='input'>{
+<span class='fu'>print</span>(<span class='fu'>head</span>(<span class='fu'>get_sstoi</span>(<span class='kw'>long</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)))
+}</div><div class='output co'>#&gt;         Date Year Month value name_index
+#&gt; 1 1982-01-01 1982     1 -0.17    ANOM1.2
+#&gt; 2 1982-01-01 1982     1 -0.58    ANOM1.2
+#&gt; 3 1982-01-01 1982     1 -1.31    ANOM1.2
+#&gt; 4 1982-01-01 1982     1 -0.97    ANOM1.2
+#&gt; 5 1982-02-01 1982     2 -0.23    ANOM1.2
+#&gt; 6 1982-02-01 1982     2  0.07    ANOM1.2</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#references">References</a></li>
+      <li><a href="#value">Value</a></li>
 
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#note">Note</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

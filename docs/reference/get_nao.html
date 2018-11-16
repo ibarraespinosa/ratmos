@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Equivalent Potential Temperature — thetae • ratmos</title>
+<title>Get North Atlantic Oscillation (NAO) data — get_nao • ratmos</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Equivalent Potential Temperature — thetae" />
+<meta property="og:title" content="Get North Atlantic Oscillation (NAO) data — get_nao" />
 
-<meta property="og:description" content="thetae Calculates potential temperature
-equivalent" />
+<meta property="og:description" content="get_nao Downloads NAO data returning a data.frame" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,62 +100,58 @@ equivalent" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Equivalent Potential Temperature</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/thetae.R'><code>R/thetae.R</code></a></small>
-    <div class="hidden name"><code>thetae.Rd</code></div>
+    <h1>Get North Atlantic Oscillation (NAO) data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos//blob/master/R/get_nao.R'><code>R/get_nao.R</code></a></small>
+    <div class="hidden name"><code>get_nao.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>thetae</code> Calculates potential temperature
-equivalent</p>
+    <p><code>get_nao</code> Downloads NAO data returning a data.frame</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>thetae</span>(<span class='no'>theta</span>, <span class='no'>r</span>, <span class='no'>Tlcl</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>theta</th>
-      <td><p>Numeric; potential temperature in kelvin</p></td>
-    </tr>
-    <tr>
-      <th>r</th>
-      <td><p>Numeric; mixing ratio (kg/kg)</p></td>
-    </tr>
-    <tr>
-      <th>Tlcl</th>
-      <td><p>Numeric; lifting condensation level Kelvin</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <pre class="usage"><span class='fu'>get_nao</span>()</pre>
+        
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Bolton, D. (1980). The computation of equivalent potential
-temperature. Monthly weather review, 108(7), 1046-1053.
-Eq 35</p>
+    <p>data.frame</p>
     
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <div class='dont-index'><p><code><a href='theta.html'>theta</a></code></p></div>
+    <p>From https://www.ncdc.noaa.gov/teleconnections/enso/indicators/nao/:</p>
+<p>The North Atlantic Oscillation (NAO) index is based on the surface sea-level
+pressure difference between the Subtropical (Azores) High and the Subpolar Low.
+The positive phase of the NAO reflects below-normal heights and pressure across
+the high latitudes of the North Atlantic and above-normal heights and pressure
+over the central North Atlantic, the eastern United States and western Europe.
+The negative phase reflects an opposite pattern of height and pressure anomalies
+over these regions. Both phases of the NAO are associated with basin-wide changes
+in the intensity and location of the North Atlantic jet stream and storm track,
+and in large-scale modulations of the normal patterns of zonal and meridional
+heat and moisture transport, which in turn results in changes in temperature and
+precipitation patterns often extending from eastern North America to western and
+central Europe.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"># NOT RUN {
-#dont run
-# }
-</pre>
+    <pre class="examples"><div class='input'>{
+<span class='fu'>print</span>(<span class='fu'>head</span>(<span class='fu'>get_nao</span>()))
+}</div><div class='output co'>#&gt;         Date Year Month   NAO
+#&gt; 1 1950-01-01 1950     1  0.92
+#&gt; 2 1950-02-01 1950     2  0.40
+#&gt; 3 1950-03-01 1950     3 -0.36
+#&gt; 4 1950-04-01 1950     4  0.73
+#&gt; 5 1950-05-01 1950     5 -0.59
+#&gt; 6 1950-06-01 1950     6 -0.06</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#references">References</a></li>
+      <li><a href="#value">Value</a></li>
 
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#note">Note</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

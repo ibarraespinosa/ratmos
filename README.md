@@ -5,14 +5,10 @@ date: "7 de Septiembre de 2018"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 # RATMOS
 
-To convert your data from NetCDF atmospheric models to raster,extract data.
-Now includes some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/lcl.html)
 
 [![Travis-CI Build Status](https://img.shields.io/badge/lifecycle-experimental-orange.svg?branch=master)](https://travis-ci.org/ibarraespinosa/ratmos)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ibarraespinosa/ratmos?branch=master&svg=true)](https://ci.appveyor.com/project/ibarraespinosa/ratmos)
@@ -21,13 +17,19 @@ Now includes some meteorological function such as [wind_shear](https://ibarraesp
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ratmos)](http://cran.r-project.org/web/packages/ratmos) 
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/ratmos?color=orange)](http://cran.r-project.org/package=ratmos)
 [![Package Status](https://img.shields.io/badge/lifecycle-experimental-organce.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Github Stars](https://img.shields.io/github/stars/ibarraespinosa/ratmos.svg?style=social&label=Github)](https://github.com/ibarraespinosa/ratmos)
+
+
+Package to process meteorological data. 
+I includes converting your data from NetCDF atmospheric models to raster with special functions to WRF and RegCM.
+Now includes some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/lcl.html)
 
 
 ### Installation
 
 **ratmos** can be installed via CRAN or github
 
-```{r eval = F}
+```r
 devtools::install_github("ibarraespinosa/ratmos")
 library(ratmos)
 ```
@@ -36,28 +38,40 @@ library(ratmos)
 ## Examples
 
 
-1. Put the path of your netcdf file.
+- Put the path of your netcdf file.
 
-```{r eval = F, include = T, echo = T}
+```r
 library(ratmos)
 r <- raster_nc("file.nc")
-```
-
-If you are using WRF, use this:
-
-```{r eval = F, include = T, echo = T}
 r <- raster_wrf("file.nc")
+r <- raster_regcm("file.nc") #experimental
 ```
 
-2.  Extract your info in a data.frame in long format.
+- Extract your info in a data.frame in long format.
 
-```{r eval = F, include = T, echo = T}
+```r
+library(ratmos)
 data(cetesb) #SpatialPointsDataFrame
 df <- xtractor(x = r,                      # raster
                points = cetesb,            # SpatialPointsDataFrame
                station = cetesb$Station,   # Name of each point
                start = "2016-04-15 00:00") # First hour
 ```
+
+- Download climate index
+
+```r
+library(ratmos)
+b <- get_all_index(olr = FALSE)
+library(ggplot2)
+library(cptcity)
+ggplot(b, aes(x = Date, y = index, colour = index)) + geom_point()+
+facet_wrap(~name, ncol = 2, scales = "free") + theme_bw() +
+scale_colour_gradientn(colours = rev(cpt(find_cpt("cb_div_RdB")[2])), limit = c(-4.6, 4.6))
+```
+
+
+![](https://i.imgur.com/sdCXJ6g.png)
 
 Please, READ THE DOCUMENTATION: [https://ibarraespinosa.github.io/ratmos/](https://ibarraespinosa.github.io/ratmos/)
 
@@ -67,7 +81,6 @@ Thanks and enjoy ratmos!
 ##  Issues
 
 If you encounter any issues while using ratmos, please submit your issues to: https://github.com/ibarraespinosa/ratmos/issues/
-
 If you have any suggestions just let me know to sergio.ibarra@usp.br.
 
 
