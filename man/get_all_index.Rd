@@ -40,7 +40,7 @@ tail(a)
 b <- get_all_index(olr = FALSE)
 library(ggplot2)
 library(cptcity)
-ggplot(b, aes(x = Date, y = index, colour = index)) + geom_point()+
+ggplot(b, aes(x = Date, y = index, colour = index)) + geom_line()+
 facet_wrap(~name, ncol = 2, scales = "free") + theme_bw() +
 scale_colour_gradientn(colours = rev(cpt(find_cpt("cb_div_RdB")[2])), limit = c(-4.6, 4.6))
 head(b)
