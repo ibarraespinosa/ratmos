@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_soi.R
 \name{get_soi}
 \alias{get_soi}
-\title{Get Outgoing long wave radiation (soi) equator 160E-160W standarized data}
+\title{Get Southern Oscillation Index (SOI)}
 \usage{
 get_soi()
 }
@@ -10,7 +10,7 @@ get_soi()
 data.frame
 }
 \description{
-\code{\link{get_soi}} Downloads soi data returning a data.frame
+\code{\link{get_soi}} Downloads SOI index returning a data.frame
 }
 \note{
 From https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/

@@ -26,9 +26,7 @@ get_oni <- function(){
     ma <- function(x,n=3){stats::filter(x,rep(1/n,n), sides=2)}
     oni$ONI <- ma(oni$ANOM, 3)
     oni <- oni[, c("Date", "Year", "Month", "ONI")]
-    oni$phase = factor(ifelse(oni$ONI >= 0.5, "La Nina",
-                              ifelse(oni$ONI <= -0.5, "El Nino",
-                                     "Neutral Phase")))
+
     return(oni)
   }
 }

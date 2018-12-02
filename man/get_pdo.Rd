@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_pdo.R
 \name{get_pdo}
 \alias{get_pdo}
-\title{GetPacific Decadal Oscillation (PDO) data}
+\title{Get Pacific Decadal Oscillation (PDO) data}
 \usage{
 get_pdo()
 }

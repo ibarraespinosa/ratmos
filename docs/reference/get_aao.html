@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GFS files — gfs • ratmos</title>
+<title>Get Antartic Oscillation (AAO) data — get_aao • ratmos</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,13 +30,9 @@
 
 
 
-<meta property="og:title" content="Get GFS files — gfs" />
+<meta property="og:title" content="Get Antartic Oscillation (AAO) data — get_aao" />
 
-<meta property="og:description" content="gfs Creates raster from GFS file.
-The goal is to read and or download file from
-ftp://nomads.ncdc.noaa.gov/GFS/analysis_only/ from 200403 to
-present. Inside each directory the files are other firectories
-for each day, for instance, 20180901." />
+<meta property="og:description" content="get_aao Downloads AAO data returning a data.frame" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,69 +102,49 @@ for each day, for instance, 20180901." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GFS files</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos/blob/master/R/gfs.R'><code>R/gfs.R</code></a></small>
-    <div class="hidden name"><code>gfs.Rd</code></div>
+    <h1>Get Antartic Oscillation (AAO) data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ibarraespinosa/ratmos/blob/master/R/get_aao.R'><code>R/get_aao.R</code></a></small>
+    <div class="hidden name"><code>get_aao.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>gfs</code> Creates raster from GFS file.
-The goal is to read and or download file from
-ftp://nomads.ncdc.noaa.gov/GFS/analysis_only/ from 200403 to
-present. Inside each directory the files are other firectories
-for each day, for instance, 20180901.</p>
+    <p><code>get_aao</code> Downloads AAO data returning a data.frame</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>gfs</span>(<span class='no'>time</span>, <span class='kw'>dest</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/tempfile'>tempdir</a></span>(), <span class='kw'>id1</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>id2</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>time</th>
-      <td><p>Numeric or POSIXct; numer for Year, Month and Day.
-For instance, 2004120100 or "2004-12-01 00:00". The
-only hours available are 00:00, 06:00, 12:00 and 18:00,</p></td>
-    </tr>
-    <tr>
-      <th>dest</th>
-      <td><p>directory for storing your GFS grib data.</p></td>
-    </tr>
-    <tr>
-      <th>id1</th>
-      <td><p>Integer; 0, 3 or 6</p></td>
-    </tr>
-    <tr>
-      <th>id2</th>
-      <td><p>Integer; 3 or 4</p></td>
-    </tr>
-    <tr>
-      <th>verbose</th>
-      <td><p>Logical; To show operations.</p></td>
-    </tr>
-    </table>
-    
+    <pre class="usage"><span class='fu'>get_aao</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>raster</p>
+    <p>data.frame</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>trying to get all http://nomads.ncep.noaa.gov/</p>
+    <p>From http://www.cpc.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao.shtml:
+The daily AAO index is constructed by projecting the daily (00Z)
+ 700mb height anomalies poleward of 20°S onto the loading pattern of the AAO.
+ Please note that year-round monthly mean anomaly data
+ have been used to obtain the loading pattern of the AAO.
+ Since the AAO has the largest variability during the cold season,
+ the loading pattern primarily captures characteristics of the cold season
+ AAO pattern.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"># NOT RUN {
-#dont run
-# }
-</pre>
+    <pre class="examples"><div class='input'>{
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/head'>head</a></span>(<span class='fu'>get_aao</span>()))
+}</div><div class='output co'>#&gt;   Date Year Month     AAO
+#&gt; 1 &lt;NA&gt;   NA    NA 0.20876
+#&gt; 2 &lt;NA&gt;   NA    NA 0.35626
+#&gt; 3 &lt;NA&gt;   NA    NA 0.89918
+#&gt; 4 &lt;NA&gt;   NA    NA 0.67758
+#&gt; 5 &lt;NA&gt;   NA    NA 0.72374
+#&gt; 6 &lt;NA&gt;   NA    NA 1.70000</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
 

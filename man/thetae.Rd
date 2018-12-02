@@ -14,8 +14,7 @@ thetae(theta, r, Tlcl)
 \item{Tlcl}{Numeric; lifting condensation level Kelvin}
 }
 \description{
-\code{\link{thetae}} Calculates potential temperature
-equivalent
+\code{\link{thetae}} Calculates equivalent potential temperature
 }
 \examples{
 \dontrun{

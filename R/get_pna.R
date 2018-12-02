@@ -1,4 +1,4 @@
-#' GetPacific Decadal Oscillation (pna) data
+#' Get Pacific-North America (PNA) data
 #'
 #' @description \code{\link{get_pna}} Downloads pna data returning a data.frame
 #'

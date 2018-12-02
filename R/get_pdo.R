@@ -1,4 +1,4 @@
-#' GetPacific Decadal Oscillation (PDO) data
+#' Get Pacific Decadal Oscillation (PDO) data
 #'
 #' @description \code{\link{get_pdo}} Downloads PDO data returning a data.frame
 #'

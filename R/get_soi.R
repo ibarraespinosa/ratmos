@@ -1,6 +1,6 @@
-#' Get Outgoing long wave radiation (soi) equator 160E-160W standarized data
+#' Get Southern Oscillation Index (SOI)
 #'
-#' @description \code{\link{get_soi}} Downloads soi data returning a data.frame
+#' @description \code{\link{get_soi}} Downloads SOI index returning a data.frame
 #'
 #' @return data.frame
 #' @importFrom RCurl url.exists

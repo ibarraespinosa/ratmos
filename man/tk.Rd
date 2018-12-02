@@ -7,10 +7,10 @@
 tk(temperature)
 }
 \arguments{
-\item{temperature}{Numeric temperature in celcius}
+\item{temperature}{Numeric temperature in Celcius}
 }
 \description{
-\code{\link{tk}} Calculates absolute temerature Kelvin
+\code{\link{tk}} Calculates absolute temperature in Kelvin
 }
 \examples{
 \dontrun{

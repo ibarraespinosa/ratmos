@@ -1,7 +1,6 @@
 #' Equivalent Potential Temperature
 #'
-#' @description \code{\link{thetae}} Calculates potential temperature
-#' equivalent
+#' @description \code{\link{thetae}} Calculates equivalent potential temperature
 #'
 #' @param theta Numeric; potential temperature in kelvin
 #' @param r Numeric; mixing ratio (kg/kg)

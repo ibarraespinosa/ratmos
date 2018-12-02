@@ -5,8 +5,8 @@
 #' @param u Numeric; u component of wind
 #' @param v Numeric; v component of wind
 #' @param zlev Numeric; levels of each wind
-#' @param zlev_bottom Numeric; bottom nivels to calculate wind shear, from zlev
-#' @param zlev_top Numeric; top nivels to calculate wind shear, from zlev
+#' @param zlev_bottom Numeric; bottom levels to calculate wind shear, from zlev
+#' @param zlev_top Numeric; top levels to calculate wind shear, from zlev
 #' @param list Logical; Do you want a list of data.frames with all values?
 #' @export
 #' @examples \dontrun{

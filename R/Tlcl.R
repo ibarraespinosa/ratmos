@@ -1,9 +1,9 @@
-#' Temperature of lift condensation level
+#' Temperature at the Lifting Condensation Level
 #'
 #' @description \code{\link{tk}} Calculates absolute temperature
 #'
 #' @param tk Numeric; temperature in kelvin
-#' @param rh Numeric; relative humidity
+#' @param rh Numeric; relative humidity in percentage
 #' @export
 #' @references  Bolton, D. (1980). The computation of equivalent potential
 #' temperature. Monthly weather review, 108(7), 1046-1053.

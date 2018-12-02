@@ -2,14 +2,14 @@
 % Please edit documentation in R/Tlcl.R
 \name{Tncl}
 \alias{Tncl}
-\title{Temperature of lift condensation level}
+\title{Temperature at the Lifting Condensation Level}
 \usage{
 Tncl(tk, rh)
 }
 \arguments{
 \item{tk}{Numeric; temperature in kelvin}
 
-\item{rh}{Numeric; relative humidity}
+\item{rh}{Numeric; relative humidity in percentage}
 }
 \description{
 \code{\link{tk}} Calculates absolute temperature

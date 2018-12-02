@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_pna.R
 \name{get_pna}
 \alias{get_pna}
-\title{GetPacific Decadal Oscillation (pna) data}
+\title{Get Pacific-North America (PNA) data}
 \usage{
 get_pna()
 }

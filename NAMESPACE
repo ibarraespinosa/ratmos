@@ -3,6 +3,7 @@
 export(Tncl)
 export(array3d)
 export(array4d)
+export(get_aao)
 export(get_all_index)
 export(get_ao)
 export(get_nao)

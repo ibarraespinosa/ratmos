@@ -1,6 +1,6 @@
-#' Lifting Level Level
+#' Lifting Condensation Level
 #'
-#' @description \code{\link{lcl}} calculates the Lifting Level Level in
+#' @description \code{\link{lcl}} calculates the Lifting Condensation Level in
 #' meters.
 #'
 #' @param p Numeric; presusre in Pascals.

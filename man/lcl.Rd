@@ -2,7 +2,7 @@
 % Please edit documentation in R/lcl.R
 \name{lcl}
 \alias{lcl}
-\title{Lifting Level Level}
+\title{Lifting Condensation Level}
 \usage{
 lcl(p, tk, rh = NULL, rhl = NULL, rhs = NULL, return_ldl = FALSE,
   return_min_lcl_ldl = FALSE, tktrip = 273.16, ptrip = 611.65,
@@ -57,7 +57,7 @@ between water vapor and liquid at the triple point. Default =
 \item{cpv}{Numeric; cvv + rgasv}
 }
 \description{
-\code{\link{lcl}} calculates the Lifting Level Level in
+\code{\link{lcl}} calculates the Lifting Condensation Level in
 meters.
 }
 \examples{
