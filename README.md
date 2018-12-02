@@ -22,7 +22,7 @@ output: html_document
 
 Package to process meteorological data. 
 I included converting your data from NetCDF atmospheric models to raster with special functions to WRF and RegCM.
-Now included some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/lcl.html)
+Now included some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/reference/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/reference/lcl.html)
 
 
 ### Installation
