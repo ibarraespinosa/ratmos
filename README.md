@@ -21,13 +21,13 @@ output: html_document
 
 
 Package to process meteorological data. 
-I includes converting your data from NetCDF atmospheric models to raster with special functions to WRF and RegCM.
-Now includes some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/lcl.html)
+I included converting your data from NetCDF atmospheric models to raster with special functions to WRF and RegCM.
+Now included some meteorological function such as [wind_shear](https://ibarraespinosa.github.io/ratmos/wind_shear.html) and [lcl](https://ibarraespinosa.github.io/ratmos/lcl.html)
 
 
 ### Installation
 
-**ratmos** can be installed via CRAN or github
+**ratmos** can be installed via github
 
 ```r
 devtools::install_github("ibarraespinosa/ratmos")
@@ -86,7 +86,6 @@ If you have any suggestions just let me know to sergio.ibarra@usp.br.
 
 ### Contributing
 
-Please, read [this](https://github.com/ibarraespinosa/ratmos/blob/master/CONTRIBUTING.md) guide.
 Contributions of all sorts are welcome, issues and pull requests are the preferred ways of sharing them.
 When contributing pull requests, please follow the [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml).
 This project is released with a [Contributor Code of Conduct](https://github.com/ibarraespinosa/ratmos/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
