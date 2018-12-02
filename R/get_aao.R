@@ -23,7 +23,8 @@ get_aao <- function(){
   if(RCurl::url.exists(url)){
     aao <- utils::read.table(url, header = F, stringsAsFactors = FALSE)
     names(aao) <- c("Year","Month", "AAO")
-    aao$Date <- as.Date(paste0(aao$Date, "01"), format = "%Y%m%d")
+    aao$Month <- ifelse(aao$Month <=9, paste0("0", aao$Month), aao$Month)
+    aao$Date <- as.Date(paste0(aao$Year, aao$Month, "01"), format = "%Y%m%d")
     aao$Year <- as.integer(strftime(aao$Date, "%Y"))
     aao$Month <- as.integer(strftime(aao$Date, "%m"))
     aao <- aao[, c("Date", "Year", "Month", "AAO")]
