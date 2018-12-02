@@ -71,7 +71,7 @@ scale_colour_gradientn(colours = rev(cpt(find_cpt("cb_div_RdB")[2])), limit = c(
 ```
 
 
-![](https://i.imgur.com/f28PW2d.png)
+![](https://i.imgur.com/4yuyVOc.png)
 
 Please, READ THE DOCUMENTATION: [https://ibarraespinosa.github.io/ratmos/](https://ibarraespinosa.github.io/ratmos/)
 

@@ -5,7 +5,7 @@
 \title{Get all index in long format}
 \usage{
 get_all_index(nao = TRUE, olr = TRUE, oni = TRUE, pdo = TRUE,
-  pna = TRUE, soi = TRUE, sstoi = TRUE)
+  pna = TRUE, soi = TRUE, sstoi = TRUE, aao = TRUE)
 }
 \arguments{
 \item{nao}{Logica; inlude nao?}
@@ -21,6 +21,8 @@ get_all_index(nao = TRUE, olr = TRUE, oni = TRUE, pdo = TRUE,
 \item{soi}{Logica; inlude soi?}
 
 \item{sstoi}{Logica; inlude sstoi?}
+
+\item{aao}{Logica; inlude aao?}
 }
 \value{
 data.frame
@@ -41,7 +43,7 @@ b <- get_all_index(olr = FALSE)
 library(ggplot2)
 library(cptcity)
 ggplot(b, aes(x = Date, y = index, colour = index)) + geom_line()+
-facet_wrap(~name, ncol = 2, scales = "free") + theme_bw() +
+facet_wrap(~name, ncol = 3, scales = "free") + theme_bw() +
 scale_colour_gradientn(colours = rev(cpt(find_cpt("cb_div_RdB")[2])), limit = c(-4.6, 4.6))
 head(b)
 tail(b)

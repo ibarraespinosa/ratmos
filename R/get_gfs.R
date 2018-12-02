@@ -23,7 +23,7 @@
 #' @examples \dontrun{
 #' #dont run
 #' }
-gfs <- function(time,
+get_gfs <- function(time,
                 dest = tempdir(),
                 id1 = 3,
                 id2 = 0,
