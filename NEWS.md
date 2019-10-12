@@ -1,6 +1,11 @@
 NEWS
 ===========
 
+# ratmos 0.1.9 (Release date: 2019-10-12)
+
+- minor fix.
+
+
 ## ratmos 0.1.8 (Release date: 2018-12-04)
 
 - minor fix.

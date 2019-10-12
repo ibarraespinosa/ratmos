@@ -40,15 +40,6 @@ raster_wrf <- function(nc, var, z,
     return(u)
   }
 
-  if(missing(z)){
-    choice <- utils::menu(1:dim(u)[3], title="Choose Level Z\n")
-    z <- (1:dim(u)[3])[choice]
-    if(verbose){
-      cat(paste0("\nThe level is '", z, "\n"))
-    }
-  } else {
-    z = z
-  }
   lat <- ncdf4::ncvar_get(f, "XLAT" )
   lon <- ncdf4::ncvar_get(f, "XLONG" )
   times <- ncdf4::ncvar_get(f, "Times")
@@ -62,6 +53,14 @@ raster_wrf <- function(nc, var, z,
   times <- paste0("T", times)
 
   if(length(dim(u)) == 4){
+    if(missing(z)){
+      choice <- utils::menu(1:dim(u)[3], title="Choose Level Z\n")
+      z <- (1:dim(u)[3])[choice]
+      if(verbose){
+        cat(paste0("\nThe level is '", z, "\n"))
+      }
+    }
+
     ru1 <- raster::flip(ratmos::array4d(u = u,
                                         z = z,
                                         lat = lat,
