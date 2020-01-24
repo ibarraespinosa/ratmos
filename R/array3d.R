@@ -11,14 +11,14 @@
 #' @importFrom raster flip raster
 #'
 array3d <- function(u, lat, lon){
-  ru1 <- raster::flip(raster::raster(t(u[1:dim(u)[1],
-                                         dim(u)[2]:1,
-                                         ]),
-                                     xmn = min(lon),
-                                     xmx = max(lon),
-                                     ymn = min(lat),
-                                     ymx = max(lat),
-                                     crs="+init=epsg:4326"),
-                      direction = "y")
-  return(ru1)
+  raster::flip(raster::brick(lapply(
+    seq(1, dim(u)[3]),
+    function(i) {
+      raster::raster(t(u[1:dim(u)[1],
+                         dim(u)[2]:1,
+                         i]),
+                     xmn = min(lon),xmx = max(lon),
+                     ymn = min(lat),ymx = max(lat),
+                     crs="+init=epsg:4326")
+    })), direction = "y")
 }
