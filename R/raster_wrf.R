@@ -69,7 +69,6 @@ raster_wrf <- function(nc, var, z,
     names(ru1) <- times
   } else if(length(dim(u)) == 3){
     ru1 <- raster::flip(ratmos::array3d(u = u,
-                                        z = z,
                                         lat = lat,
                                         lon = lon),
                         direction = "y")

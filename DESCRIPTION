@@ -1,8 +1,8 @@
 Package: ratmos
 Type: Package
 Title: Tools for handle and plot meteorological data including output of earth models
-Version: 0.1.8
-Date: 2019-10-12
+Version: 0.1.9
+Date: 2020-01-24
 Authors@R: c(person("Sergio", "Ibarra-Espinosa", 
   role = c("aut", "cre"), email = "sergio.ibarra@usp.br", 
     comment = c(ORCID = "0000-0002-3162-1905")),

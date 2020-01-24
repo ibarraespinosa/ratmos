@@ -10,10 +10,10 @@
 #' @export
 #' @importFrom raster flip raster
 #'
-array3d <- function(u, z, lat, lon){
+array3d <- function(u, lat, lon){
   ru1 <- raster::flip(raster::raster(t(u[1:dim(u)[1],
                                          dim(u)[2]:1,
-                                         z]),
+                                         ]),
                                      xmn = min(lon),
                                      xmx = max(lon),
                                      ymn = min(lat),
